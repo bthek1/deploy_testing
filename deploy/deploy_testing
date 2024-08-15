@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name 172.22.251.200;
+
+    location /static/ {
+        root /home/ben-24/Example_project/todo/staticfiles;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+    }
+}
